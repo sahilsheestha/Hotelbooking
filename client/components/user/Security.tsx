@@ -8,22 +8,7 @@ import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 
-const Security = () => {
-    const router = useRouter()
-    const dispatch = useAppDispatch()
 
-    const {user} = useAppSelector((state) => state.persistedReducer.auth)
-
-    // Delete Account
-    const [deleteUser, {isLoading: isDeleting}] = useDeleteUserMutation()
-    const handleDeleteMyAccount = async () => {
-        try {
-            const result = await deleteUser(user?._id as string).unwrap()
-            toast.success(result.message || 'Delete success')
-            dispatch(logout())
-            // Fix error toast
-            setTimeout(() => router.push('/'), 1)
-        } catch (error: any) {
             toast.error(error.data?.message || 'Something went wrong')
         }
     }
