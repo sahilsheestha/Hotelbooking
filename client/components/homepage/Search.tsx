@@ -48,15 +48,6 @@ const Search = () => {
                             <input type="number" className="form-input block rounded"/>
                         </div>
 
-                        <Link
-                            href={`search/${city}`}
-                            className={!city ? 'pointer-events-none cursor-not-allowed' : ''}
-                        >
-                            <div>
-                                <Button
-                                    text="Search"
-                                    textColor="text-white"
-                                    bgColor="bg-lightPrimary"
                                 />
                             </div>
                         </Link>

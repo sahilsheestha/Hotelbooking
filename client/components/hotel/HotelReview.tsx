@@ -176,7 +176,16 @@ const HotelReview = ({ reviews, id, setShowModal }: any) => {
                 </div>
               </>
             ) : (
-              
+              <div>
+                <h3 className="font-semibold text-2xl mb-4 text-black text-center">
+                  Please login to review
+                </h3>
+                <Link href="/auth" className="flex text-center justify-center">
+                  <Button
+                    text="Login"
+                    textColor="text-white"
+                    bgColor="bg-primary"
+                  />
                 </Link>
               </div>
             )}
