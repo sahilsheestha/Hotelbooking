@@ -6,15 +6,7 @@ import {apiUrl} from '../utils/config'
 
 export const userApi = createApi({
     reducerPath: 'userApi',
-    tagTypes: ['myHotels'],
-    baseQuery: fetchBaseQuery({
-        baseUrl: apiUrl,
-        prepareHeaders: (headers, {getState, endpoint}) => {
-            const user = (getState() as RootState).persistedReducer.auth
-
-            if (user && user.token && endpoint !== 'refresh') {
-                headers.set('Authorization', `Bearer ${user.token}`)
-            }
+    tag
             return headers
         }
     }),
