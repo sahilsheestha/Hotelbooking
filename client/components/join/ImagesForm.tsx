@@ -37,19 +37,7 @@ const ImagesForm = (
                         toast.error(`${file.name} size too large`)
                     }
                 }
-                if (Array.from(formData.keys()).length > 0) {
-                    setCounter(Array.from(formData.keys()).length)
-                    const url = await uploadImageToCloud(formData)
-                    if (url) {
-                        setFiles([...files, ...url])
-                        setCounter(0)
-                    }
-                }
-            } catch (e) {
-                toast.error('Something went wrong')
-            }
-        }
-    }
+                
     const uploadImageToCloud = async (formData: FormData) => {
         try {
             const {url} = await uploadImages(formData).unwrap()
