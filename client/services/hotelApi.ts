@@ -58,3 +58,4 @@ export const hotelApi = createApi({
     })
 })
 
+export const {useGetHotelsQuery, useGetHotelQuery, usePostReviewMutation, useDeleteReviewMutation, useUpdateReviewMutation} = hotelApi
