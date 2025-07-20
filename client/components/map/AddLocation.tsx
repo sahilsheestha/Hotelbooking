@@ -41,25 +41,6 @@ const AddLocation = ({
                         })
                     }
                 />}
-                <NavigationControl position="bottom-right"/>
-                <GeolocateControl
-                    position="top-left"
-                    trackUserLocation
-                    onGeolocate={(e) => {
-                        updateFields({
-                            address: {
-                                ...address,
-                                lng: e.coords.longitude,
-                                lat: e.coords.latitude
-                            }
-                        })
-                    }
-                    }
-                />
-                <Geocoder address={address} updateFields={updateFields}/>
-            </ReactMapGL>
-        </div>
-    )
-}
+                
 
 export default AddLocation
