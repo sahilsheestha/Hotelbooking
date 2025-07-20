@@ -12,26 +12,7 @@ interface Props {
     photos: string[]
 }
 
-const ImageGallery = ({photos}: Props) => {
-    let [showImage, setShowImage] = useState(false)
-    let [imageFocus, setImageFocus] = useState(photos[0])
-    return (
-        <>
-            <div className="h-96">
-                <Swiper
-                    spaceBetween={10}
-                    breakpoints={{
-                        768: {
-                            slidesPerView: 2
-                        },
-                        1024: {
-                            slidesPerView: 2.1
-                        }
-                    }}
-                    slidesPerView={1.5}
-                    navigation={true}
-                    modules={[Navigation]}
-                    className="h-full"
+
                 >
                     {
                         photos.map(image =>
