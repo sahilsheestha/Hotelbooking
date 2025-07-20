@@ -13,7 +13,11 @@ const Geocoder = ({
         marker: false,
         collapsed: true
     })
-   
+    useControl(() => ctrl)
+    ctrl.on('result', (e) => {
+        const coords = e.result.geometry.coordinates
+        updateFields({
+            address: {
                 ...address,
                 lng: coords[0],
                 lat: coords[1]
