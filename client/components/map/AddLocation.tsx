@@ -15,7 +15,32 @@ const AddLocation = ({
 }: AddressFormProps) => {
     const {lat, lng} = address
 
-    
+    return (
+        <div>
+            <ReactMapGL
+                mapboxAccessToken={mapboxAccessToken}
+                initialViewState={{
+                    longitude: lng,
+                    latitude: lat,
+                    zoom: 10
+                }}
+                style={{height: '50vh'}}
+                mapStyle="mapbox://styles/mapbox/streets-v11"
+            >
+                {lat && lng && <Marker
+                    latitude={lat}
+                    longitude={lng}
+                    draggable
+                    onDragEnd={(e) =>
+                        updateFields({
+                            address: {
+                                ...address,
+                                lng: e.lngLat.lng,
+                                lat: e.lngLat.lat
+                            }
+                        })
+                    }
+                />}
                 <NavigationControl position="bottom-right"/>
                 <GeolocateControl
                     position="top-left"
