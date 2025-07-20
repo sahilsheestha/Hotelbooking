@@ -14,14 +14,7 @@ type FormValues = {
     phone: string;
 };
 
-const PersonalDetails = () => {
-    const {user, token} = useAppSelector((state) => state.persistedReducer.auth)
-    const {data: userData, isLoading: getLoading, isSuccess} = useGetUserQuery(user?._id as string)
-    const dispatch = useAppDispatch()
-    useEffect(() => {
-        if (isSuccess) {
-            dispatch(
-                setUser({user: userData, token})
+
             )
         }
     }, [dispatch, userData, isSuccess, token])
